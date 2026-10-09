@@ -1,0 +1,181 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: linear-gradient(135deg, #d6edff, #e6f4ff 50%, #cbe7ff);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ===== ANIMASI LATAR ===== */
+@keyframes mengambang {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0.5; }
+  50% { transform: translateY(-30px) rotate(10deg); opacity: 0.8; }
+  100% { transform: translateY(0) rotate(0deg); opacity: 0.5; }
+}
+
+@keyframes melayang {
+  0% { transform: translateX(-100px); }
+  100% { transform: translateX(calc(100vw + 100px)); }
+}
+
+@keyframes kedip {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+@keyframes naikTurun {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes masukDariBawah {
+  0% { transform: translateY(40px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.bg-float {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(100, 181, 246, 0.15);
+  animation: mengambang 6s ease-in-out infinite;
+}
+
+.bg-1 {
+  width: 180px;
+  height: 180px;
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.bg-2 {
+  width: 120px;
+  height: 120px;
+  top: 40%;
+  right: 15%;
+  animation-delay: 1.5s;
+}
+
+.bg-3 {
+  width: 90px;
+  height: 90px;
+  bottom: 20%;
+  left: 25%;
+  animation-delay: 3s;
+}
+
+.bg-4 {
+  width: 150px;
+  height: 150px;
+  top: 60%;
+  left: 60%;
+  animation-delay: 4.5s;
+}
+
+.container {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  position: relative;
+  z-index: 1;
+  animation: masukDariBawah 0.8s ease-out;
+}
+
+.logo-box {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.logo-icon {
+  width: 100px;
+  height: 100px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  box-shadow: 0 8px 24px rgba(33, 150, 243, 0.25);
+  animation: naikTurun 3s ease-in-out infinite;
+}
+
+.chibi {
+  font-size: 50px;
+}
+
+.judul {
+  font-size: 36px;
+  font-weight: 900;
+  color: #1565c0;
+  letter-spacing: 1px;
+}
+
+.sub-judul {
+  color: #4290d5;
+  font-size: 16px;
+  margin-top: 6px;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.menu-btn {
+  background: #ffffff;
+  border: none;
+  border-radius: 16px;
+  padding: 24px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 16px rgba(33, 150, 243, 0.12);
+  transition: all 0.3s ease;
+  animation: masukDariBawah 0.6s ease-out both;
+}
+
+.menu-btn:nth-child(1) { animation-delay: 0.1s; }
+.menu-btn:nth-child(2) { animation-delay: 0.2s; }
+.menu-btn:nth-child(3) { animation-delay: 0.3s; }
+.menu-btn:nth-child(4) { animation-delay: 0.4s; }
+
+.menu-btn:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 10px 28px rgba(33, 150, 243, 0.2);
+  background: #f0f8ff;
+}
+
+.ikon-btn {
+  font-size: 32px;
+  animation: naikTurun 2.5s ease-in-out infinite;
+}
+
+.menu-btn span:last-child {
+  font-weight: 800;
+  color: #1976d2;
+  font-size: 15px;
+}
+
+.info-box {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 16px rgba(33, 150, 243, 0.1);
+  text-align: center;
+}
+
+.teks-animasi {
+  color: #4a8fd4;
+  font-size: 14px;
+  animation: kedip 3s ease-in-out infinite;
+  }
